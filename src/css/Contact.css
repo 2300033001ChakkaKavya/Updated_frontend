@@ -1,0 +1,35 @@
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.section {
+    text-align: center;
+    width: 30%;
+    background-color: #8ddc72; /* Green background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+.section img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.contact-info {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+}

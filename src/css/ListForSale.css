@@ -1,0 +1,115 @@
+/* General Container */
+.list-sale-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+/* Grid Layout for Artworks */
+.artworks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Artwork Item Styling */
+.artwork-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.artwork-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image Styling */
+.artwork-item img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Typography */
+h1 {
+    color: #333;
+    font-size: 28px;
+}
+
+h2 {
+    color: #222;
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Price Styling */
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adds space between buttons */
+    margin-top: 10px;
+}
+
+/* Buy Now Button */
+.buy-now-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-now-button:hover {
+    background-color: #0056b3;
+}
+
+/* Delete Artwork Button */
+.delete-artwork-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-artwork-button:hover {
+    background-color: #cc0000;
+}
+
+/* Delete All Listings Button */
+.delete-all-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.delete-all-button:hover {
+    background-color: #a02424;
+}

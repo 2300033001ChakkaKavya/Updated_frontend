@@ -1,0 +1,154 @@
+/* Enable smooth scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-y: auto; /* Allows scrolling */
+}
+
+/* Page container */
+.category-page {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 60px 5vw;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+/* Scrollbar styling */
+.category-page::-webkit-scrollbar {
+  width: 10px;
+}
+
+.category-page::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 5px;
+}
+
+.category-page::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.category-page::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Title and description */
+.category-page h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #111;
+  width: 100%;
+  display: block;
+}
+
+.category-page p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #444; /* Increased contrast for better visibility */
+  max-width: 800px;
+  width: 100%;
+  display: block;
+}
+
+/* Artwork grid */
+.artwork-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Artwork card */
+.artwork-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Artwork image */
+.artwork-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Button Container for Alignment */
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Buy Now Button */
+.buy-now-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-now-button:hover {
+  background-color: #0056b3;
+}
+
+/* Like Button */
+.like-button {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.like-button:hover {
+  background-color: #cc0000;
+}
+
+.like-button.liked {
+  background-color: #28a745;
+}
+
+/* Responsive Fix */
+@media screen and (max-width: 768px) {
+  .category-page h1 {
+    font-size: 2.5em;
+  }
+
+  .category-page p {
+    font-size: 1em;
+  }
+
+  .artwork-card {
+    width: 90%;
+  }
+}

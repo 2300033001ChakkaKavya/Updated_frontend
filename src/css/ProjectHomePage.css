@@ -1,0 +1,326 @@
+.base {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 5px 15px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 990;
+    height: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.nav-links a:hover {
+    color: lightcoral;
+}
+.hero {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    margin-top: 70px;
+}
+.hero-text {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.explore-btn {
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.explore-btn:hover {
+    background-color: crimson;
+}
+.carousel-container {
+    width: 100%;
+}
+.slide-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+.carousel-caption h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.carousel-caption p {
+    font-size: 16px;
+    margin: 0;
+}
+.auth-links {
+    display: flex;
+    gap: 10px; 
+    align-items: center; 
+    margin-right: 15px;
+}
+.auth-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; 
+    border: 1px solid white;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    min-width: 80px;
+    text-align: center;
+    background-color: transparent;
+}
+.auth-link:hover {
+    background-color: lightcoral;
+    color: white;
+    transition: 0.3s; 
+}
+.footer {
+    background-color: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    border-top: 1px solid #555; 
+    font-size: 14px; 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+}
+
+.content {
+    flex: 1; /* Pushes the footer down */
+}
+
+.footer-content a {
+    color: lightblue;
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.footer-content a:hover {
+    color: white;
+    text-decoration: underline;
+}
+.socialmediaIcon {
+    width: 18px;
+    height: auto;
+}
+
+/* ----------- ADDED MODAL STYLES FOR SIGN UP POPUP ----------- */
+
+/* ----------- COMMON MODAL OVERLAY STYLE ----------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* ----------- UPDATED SIGNUP MODAL TO MATCH SIGNIN STYLE ----------- */
+.signup-modal {
+    background: linear-gradient(to bottom, #00416A, #E4E5E6); /* Same gradient as sign in */
+    color: black;
+    border-radius: 25px;
+    padding: 40px 30px 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.signup-modal h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.signup-modal input,
+.signup-modal select {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    outline: none;
+    cursor: pointer;
+}
+
+.signup-modal select:hover {
+    background-color: #f0f0f0;
+}
+
+.signup-modal select option {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #7d5fff; /* Same as Sign In button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.signup-btn:hover {
+    background-color: #5c3ec7;
+}
+
+/* Reuse existing close button style */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* ----------- SIGNIN MODAL STYLES ----------- */
+.signin-modal {
+    background: linear-gradient(to bottom, #00416A, #E4E5E6);
+    color: black;
+    border-radius: 25px;
+    padding: 40px 30px 40px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.signin-modal h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.signin-modal input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #4444dd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.signin-btn:hover {
+    background-color: #2a2a9f;
+}
+
+/* ----------- CLOSE BUTTON FOR MODALS ----------- */
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* ----------- ANIMATION ----------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}

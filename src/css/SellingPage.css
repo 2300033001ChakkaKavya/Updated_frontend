@@ -1,0 +1,73 @@
+/* General Container */
+.selling-container {
+    text-align: center;
+    padding: 40px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.selling-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Image Upload Preview */
+.image-preview {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+/* Sell Button */
+.sell-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sell-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .selling-container {
+        width: 90%;
+    }
+    
+    input, textarea {
+        font-size: 14px;
+    }
+    
+    .sell-button {
+        font-size: 16px;
+    }
+}

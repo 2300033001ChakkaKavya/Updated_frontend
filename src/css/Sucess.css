@@ -1,0 +1,60 @@
+/* Container Styling */
+.success-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #131415;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading Styling */
+.success-container h1 {
+    font-size: 2.5em;
+    color: #28a745; /* Green color for success */
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+.success-container p {
+    font-size: 1.2em;
+    color: #f6f1f1;
+    margin-bottom: 15px;
+    max-width: 600px;
+}
+
+/* Home Button */
+.home-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: rgb(16, 15, 15);
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .success-container h1 {
+        font-size: 2em;
+    }
+
+    .success-container p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .home-button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
