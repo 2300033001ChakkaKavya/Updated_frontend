@@ -22,7 +22,7 @@ export class ProjectHomePage extends Component {
   }
 
   // ✅ Backend URL (from .env or fallback)
-  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8081/";
+  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8081/";
 
   // ✅ Toggle Modals
   toggleSignup = () => {
