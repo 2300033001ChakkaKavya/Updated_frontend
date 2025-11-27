@@ -21,10 +21,18 @@ export class ProjectHomePage extends Component {
     if (token) this.setState({ isLoggedIn: true });
   }
 
-  // ✅ Backend URL (from .env or fallback)
-  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8081/";
+  // ------------------------------
+  // ✅ FINAL CORRECT BACKEND URL
+  // ------------------------------
+  normalize = (url) => url.replace(/\/$/, "") + "/";
 
-  // ✅ Toggle Modals
+  BASE_URL = this.normalize(
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:8081"
+  );
+
+  // ------------------------------
+  // Toggle Modals
+  // ------------------------------
   toggleSignup = () => {
     this.setState((prev) => ({
       showSignup: !prev.showSignup,
@@ -46,14 +54,18 @@ export class ProjectHomePage extends Component {
     }));
   };
 
-  // ✅ Signout
+  // ------------------------------
+  // Signout
+  // ------------------------------
   handleSignout = () => {
     this.setState({ isLoggedIn: false });
     localStorage.removeItem("token");
     alert("You have signed out.");
   };
 
-  // ✅ Signup Handler
+  // ------------------------------
+  // Signup Handler
+  // ------------------------------
   handleSignup = async (e) => {
     e.preventDefault();
     const { fullname, email, password, confirmPassword, role } = this.state;
@@ -90,7 +102,9 @@ export class ProjectHomePage extends Component {
     }
   };
 
-  // ✅ Signin Handler
+  // ------------------------------
+  // Signin Handler
+  // ------------------------------
   handleSignin = async (e) => {
     e.preventDefault();
     const { email, password } = this.state;
@@ -122,7 +136,6 @@ export class ProjectHomePage extends Component {
     }
   };
 
-  // ✅ Form Input Change
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
@@ -138,7 +151,7 @@ export class ProjectHomePage extends Component {
 
     return (
       <div className="base">
-        {/* ✅ Navbar */}
+        {/* NAVBAR */}
         <header className="navbar">
           <div className="logo-container">
             <img className="logo" src="/images/logo.jpg" alt="Logo" />
@@ -165,7 +178,7 @@ export class ProjectHomePage extends Component {
           </div>
         </header>
 
-        {/* ✅ Hero Section */}
+        {/* HERO SECTION */}
         <div className="hero">
           <Slider {...settings} className="carousel-container">
             <div><img className="slide-image" src="/images/a1.webp" alt="Art 1" /></div>
@@ -180,7 +193,7 @@ export class ProjectHomePage extends Component {
           </div>
         </div>
 
-        {/* ✅ Signup Modal */}
+        {/* SIGNUP MODAL */}
         {this.state.showSignup && (
           <div className="modal-overlay">
             <div className="signup-modal">
@@ -236,7 +249,7 @@ export class ProjectHomePage extends Component {
           </div>
         )}
 
-        {/* ✅ Signin Modal */}
+        {/* SIGNIN MODAL */}
         {this.state.showSignin && (
           <div className="modal-overlay">
             <div className="signin-modal">
@@ -265,7 +278,7 @@ export class ProjectHomePage extends Component {
           </div>
         )}
 
-        {/* ✅ Footer */}
+        {/* FOOTER */}
         <footer className="footer">
           <div className="footer-content">
             <p>&copy; 2025 Art Gallery | All Rights Reserved</p>
