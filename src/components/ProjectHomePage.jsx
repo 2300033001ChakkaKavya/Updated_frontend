@@ -21,18 +21,10 @@ export class ProjectHomePage extends Component {
     if (token) this.setState({ isLoggedIn: true });
   }
 
-  // ------------------------------
-  // ✅ FINAL CORRECT BACKEND URL
-  // ------------------------------
-  normalize = (url) => url.replace(/\/$/, "") + "/";
+  // ✅ Backend URL (from .env or fallback)
+  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8081";
 
-  BASE_URL = this.normalize(
-    import.meta.env.VITE_BACKEND_URL || "http://localhost:8081"
-  );
-
-  // ------------------------------
-  // Toggle Modals
-  // ------------------------------
+  // ✅ Toggle Modals
   toggleSignup = () => {
     this.setState((prev) => ({
       showSignup: !prev.showSignup,
@@ -54,18 +46,14 @@ export class ProjectHomePage extends Component {
     }));
   };
 
-  // ------------------------------
-  // Signout
-  // ------------------------------
+  // ✅ Signout
   handleSignout = () => {
     this.setState({ isLoggedIn: false });
     localStorage.removeItem("token");
     alert("You have signed out.");
   };
 
-  // ------------------------------
-  // Signup Handler
-  // ------------------------------
+  // ✅ Signup Handler
   handleSignup = async (e) => {
     e.preventDefault();
     const { fullname, email, password, confirmPassword, role } = this.state;
@@ -76,7 +64,7 @@ export class ProjectHomePage extends Component {
     }
 
     try {
-      const response = await fetch(`${this.BASE_URL}api/users/signup`, {
+      const response = await fetch(${this.BASE_URL}api/users/signup, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullname, email, password, role }),
@@ -102,15 +90,13 @@ export class ProjectHomePage extends Component {
     }
   };
 
-  // ------------------------------
-  // Signin Handler
-  // ------------------------------
+  // ✅ Signin Handler
   handleSignin = async (e) => {
     e.preventDefault();
     const { email, password } = this.state;
 
     try {
-      const response = await fetch(`${this.BASE_URL}api/users/signin`, {
+      const response = await fetch(${this.BASE_URL}api/users/signin, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -120,7 +106,7 @@ export class ProjectHomePage extends Component {
 
       if (response.ok) {
         localStorage.setItem("token", result.token);
-        alert(`Welcome back, ${result.fullname || "user"}!`);
+        alert(Welcome back, ${result.fullname || "user"}!);
         this.setState({
           isLoggedIn: true,
           fullname: result.fullname || "",
@@ -136,6 +122,7 @@ export class ProjectHomePage extends Component {
     }
   };
 
+  // ✅ Form Input Change
   handleChange = (e) => this.setState({ [e.target.name]: e.target.value });
 
   render() {
@@ -151,7 +138,7 @@ export class ProjectHomePage extends Component {
 
     return (
       <div className="base">
-        {/* NAVBAR */}
+        {/* ✅ Navbar */}
         <header className="navbar">
           <div className="logo-container">
             <img className="logo" src="/images/logo.jpg" alt="Logo" />
@@ -178,7 +165,7 @@ export class ProjectHomePage extends Component {
           </div>
         </header>
 
-        {/* HERO SECTION */}
+        {/* ✅ Hero Section */}
         <div className="hero">
           <Slider {...settings} className="carousel-container">
             <div><img className="slide-image" src="/images/a1.webp" alt="Art 1" /></div>
@@ -193,7 +180,7 @@ export class ProjectHomePage extends Component {
           </div>
         </div>
 
-        {/* SIGNUP MODAL */}
+        {/* ✅ Signup Modal */}
         {this.state.showSignup && (
           <div className="modal-overlay">
             <div className="signup-modal">
@@ -249,7 +236,7 @@ export class ProjectHomePage extends Component {
           </div>
         )}
 
-        {/* SIGNIN MODAL */}
+        {/* ✅ Signin Modal */}
         {this.state.showSignin && (
           <div className="modal-overlay">
             <div className="signin-modal">
@@ -278,7 +265,7 @@ export class ProjectHomePage extends Component {
           </div>
         )}
 
-        {/* FOOTER */}
+        {/* ✅ Footer */}
         <footer className="footer">
           <div className="footer-content">
             <p>&copy; 2025 Art Gallery | All Rights Reserved</p>
