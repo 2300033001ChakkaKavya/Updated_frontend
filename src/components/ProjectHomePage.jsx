@@ -64,7 +64,7 @@ export class ProjectHomePage extends Component {
     }
 
     try {
-      const response = await fetch(${this.BASE_URL}api/users/signup, {
+      const response = await fetch(`${this.BASE_URL}/api/users/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullname, email, password, role }),
@@ -96,7 +96,7 @@ export class ProjectHomePage extends Component {
     const { email, password } = this.state;
 
     try {
-      const response = await fetch(${this.BASE_URL}api/users/signin, {
+      const response = await fetch(`${this.BASE_URL}/api/users/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -106,7 +106,7 @@ export class ProjectHomePage extends Component {
 
       if (response.ok) {
         localStorage.setItem("token", result.token);
-        alert(Welcome back, ${result.fullname || "user"}!);
+        alert(`Welcome back, ${result.fullname || "user"}!`);
         this.setState({
           isLoggedIn: true,
           fullname: result.fullname || "",
