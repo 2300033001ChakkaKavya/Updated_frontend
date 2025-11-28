@@ -22,7 +22,7 @@ export class ProjectHomePage extends Component {
   }
 
   // ✅ Backend URL (from .env or fallback)
-  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8081";
+  BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://backend:8081/";
 
   // ✅ Toggle Modals
   toggleSignup = () => {
@@ -64,7 +64,7 @@ export class ProjectHomePage extends Component {
     }
 
     try {
-      const response = await fetch(`${this.BASE_URL}/api/users/signup`, {
+      const response = await fetch(`${this.BASE_URL}api/users/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullname, email, password, role }),
@@ -96,7 +96,7 @@ export class ProjectHomePage extends Component {
     const { email, password } = this.state;
 
     try {
-      const response = await fetch(`${this.BASE_URL}/api/users/signin`, {
+      const response = await fetch(`${this.BASE_URL}api/users/signin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
