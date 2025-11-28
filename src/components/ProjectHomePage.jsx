@@ -146,7 +146,7 @@ export class ProjectHomePage extends Component {
           </div>
 
           <nav className="nav-links">
-            <a href="#">Home</a>
+            <a href="/homepage">Home</a>
             <a href="#">Artists</a>
             <a href="#">Artworks</a>
             <a href="#">Auctions</a>
